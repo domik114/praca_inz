@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+
+{% block title %} List of Accounts {% endblock %}
+
+{% block content %}
+
+<table class="table table-striped" style="margin-top: 25px;">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">User Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Super User</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            <th scope="col">{{user.id}}</th>
+            <th scope="col">{{user.username}}</th>
+            <th scope="col">{{user.email}}</th>
+            <th scope="col">{{user.first_name}}</th>
+            <th scope="col">{{user.last_name}}</th>
+            <th scope="col">{{user.is_superuser}}</th>
+            <th scope="col"><a href="/account/list-of-users/{{user.id}}"><button
+                        class="alert-success">Change</button></a>
+            </th>
+        </tr>
+
+        {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+{% endblock %}

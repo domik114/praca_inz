@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Account Page {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Welcome {{username}}!</h1>
+<h1>Name {{first_name}}!</h1>
+<h1>Last name {{last_name}}!</h1>
+{% endif %}
+
+{% endblock %}

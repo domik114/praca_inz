@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h2>This is a home page. You can search for a job offers down below!</h2>
+
+    <p>Just insert your desired phrase, keyword, or a job position on the box on the left, and a location on the right!
+        (You
+        don't have to do it tho.)</p>
+    <br>
+
+    <div class="d-flex justify-content-center">
+
+        <form class="form-inline my-2 my-lg-0" method="POST" action="/search_bar">
+            {% csrf_token %}
+            <input class="form-control mr-sm-2" type="search" placeholder="Job" aria-label="Search" name="job">
+            <input class="form-control mr-sm-2" type="search" placeholder="Localization" aria-label="Search"
+                name="localization">
+            <button class="btn btn-outline-success " type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
